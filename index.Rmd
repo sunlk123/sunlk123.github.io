@@ -4,7 +4,6 @@ output:
   html_document:
     toc: true
     toc_float: true
-    theme: cerulean
 ---
 
 # This is Jeff's awesome website
@@ -20,4 +19,5 @@ You can learn about me [here](about_page.html)
 I often use [google](https://www.google.com) to do data science. 
 
 ## add image 
+
 
