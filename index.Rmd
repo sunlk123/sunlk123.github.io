@@ -10,7 +10,7 @@ output:
 
 ## add link 
 
-You can learn about me [here](about_page.html)
+You can learn about me [here](about_page.html).
 
 ![](https://media.giphy.com/media/drXGoW1iudhKw/giphy.gif)
 
