@@ -52,3 +52,9 @@ nyc_airbnb %>%
           colors = "Set2")
 ```
 
+```{r}
+nyc_airbnb %>%
+  count(neighbourhood) %>%
+  plot_ly(x = ~neighbourhood, y = ~n, type = "bar")
+```
+
