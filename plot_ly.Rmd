@@ -41,6 +41,7 @@ nyc_airbnb =
 
 ```{r}
 nyc_airbnb %>%
-  plot_ly(x = ~lat, y = ~long, type = "scatter", mode = "markers")
+  plot_ly(x = ~lat, y = ~long, type = "scatter", mode = "markers", 
+          color = ~price, alpha = 0.5)
 ```
 
