@@ -59,3 +59,5 @@ nyc_airbnb %>%
   plot_ly(x = ~neighbourhood, y = ~n, type = "bar")
 ```
 
+## create flexdashboard
+
