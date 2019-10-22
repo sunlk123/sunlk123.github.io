@@ -45,3 +45,10 @@ nyc_airbnb %>%
           color = ~price, alpha = 0.5)
 ```
 
+```{r}
+nyc_airbnb %>%
+  mutate(neighbourhood = fct_reorder(neighbourhood, price)) %>% 
+  plot_ly(y = ~price, color = ~neighbourhood, type = "box",
+          colors = "Set2")
+```
+
