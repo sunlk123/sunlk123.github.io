@@ -1,23 +1,9 @@
 ---
-title: "My awesome website"
+title: "New website"
 output: 
   html_document:
     toc: true
     toc_float: true
 ---
 
-# This is Jeff's awesome website
-
-## add link 
-
-You can learn about me [here](about_page.html).
-
-![](https://media.giphy.com/media/drXGoW1iudhKw/giphy.gif)
-
-## let's add some links
-
-I often use [google](https://www.google.com) to do data science. 
-
-## add image 
-
-
+You can learn about my academic and professional experience [here](about.html).
