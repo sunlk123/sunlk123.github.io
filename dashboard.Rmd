@@ -1,5 +1,5 @@
 ---
-title: "My first dashboard"
+title: "Dashboard"
 output: 
   flexdashboard::flex_dashboard:
     orientation: columns
@@ -14,6 +14,21 @@ library(viridis)
 library(p8105.datasets)
 
 library(plotly)
+
+knitr::opts_chunk$set(
+	echo = TRUE,
+	warning = FALSE,
+	fig.width = 8, 
+  fig.height = 6,
+  out.width = "90%"
+)
+options(
+  ggplot2.continuous.colour = "viridis",
+  ggplot2.continuous.fill = "viridis"
+)
+scale_colour_discrete = scale_colour_viridis_d
+scale_fill_discrete = scale_fill_viridis_d
+theme_set(theme_minimal() + theme(legend.position = "bottom"))
 ```
 
 ## Problem 2
@@ -23,11 +38,6 @@ Column {data-width=650}
 ### Chart A
 
 ```{r}
-data("instacart")
-
-instacart %>%
-  select(.data = ., aisle, product_name, reordered) %>%
-  filter(.data = ., reordered == 1, aisle == "fresh vegetables" | aisle == "fresh fruits") 
 ```
 
 Column {data-width=350}
@@ -36,11 +46,19 @@ Column {data-width=350}
 ### Chart B
 
 ```{r}
+data("rest_inspec")
 
+rest_inspec %>%
+  filter(.data = ., critical_flag == "Critical", boro == "BROOKLYN") %>%
+  group_by(boro, cuisine_description) %>%
+  select(.data = ., boro, critical_flag, cuisine_description) %>%
+  count(critical_flag) %>%
+  arrange(desc(n)) %>%
+  filter(.data = ., n > 1000) %>%
+  plot_ly(x = ~reorder(cuisine_description, -n), y = ~n, type = "bar")
 ```
 
 ### Chart C
 
 ```{r}
-
 ```
