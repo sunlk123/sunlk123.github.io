@@ -16,69 +16,6 @@
 
 <link rel="icon" href="data:image/x-icon;" type="image/x-icon">
 
-<style type="text/css">
-a.sourceLine { display: inline-block; line-height: 1.25; }
-a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
-a.sourceLine:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode { white-space: pre; position: relative; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-code.sourceCode { white-space: pre-wrap; }
-a.sourceLine { text-indent: -1em; padding-left: 1em; }
-}
-pre.numberSource a.sourceLine
-  { position: relative; left: -4em; }
-pre.numberSource a.sourceLine::before
-  { content: attr(data-line-number);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; pointer-events: all; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-    color: #aaaaaa;
-  }
-pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
-div.sourceCode
-  {  }
-@media screen {
-a.sourceLine::before { text-decoration: underline; }
-}
-code span.al { color: #ff0000; font-weight: bold; } /* Alert */
-code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
-code span.at { color: #7d9029; } /* Attribute */
-code span.bn { color: #40a070; } /* BaseN */
-code span.bu { } /* BuiltIn */
-code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
-code span.ch { color: #4070a0; } /* Char */
-code span.cn { color: #880000; } /* Constant */
-code span.co { color: #60a0b0; font-style: italic; } /* Comment */
-code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
-code span.do { color: #ba2121; font-style: italic; } /* Documentation */
-code span.dt { color: #902000; } /* DataType */
-code span.dv { color: #40a070; } /* DecVal */
-code span.er { color: #ff0000; font-weight: bold; } /* Error */
-code span.ex { } /* Extension */
-code span.fl { color: #40a070; } /* Float */
-code span.fu { color: #06287e; } /* Function */
-code span.im { } /* Import */
-code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
-code span.kw { color: #007020; font-weight: bold; } /* Keyword */
-code span.op { color: #666666; } /* Operator */
-code span.ot { color: #007020; } /* Other */
-code span.pp { color: #bc7a00; } /* Preprocessor */
-code span.sc { color: #4070a0; } /* SpecialChar */
-code span.ss { color: #bb6688; } /* SpecialString */
-code span.st { color: #4070a0; } /* String */
-code span.va { color: #19177c; } /* Variable */
-code span.vs { color: #4070a0; } /* VerbatimString */
-code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
-</style>
 
 <script type="text/javascript">
 window.FlexDashboardComponents = [];
@@ -2663,34 +2600,24 @@ window.FlexDashboardComponents.push({
 <h2>Column</h2>
 <div id="chart-a" class="section level3">
 <h3>Chart A</h3>
-<div class="knitr-options" data-fig-width="768" data-fig-height="576">
+<div class="knitr-options" data-fig-width="576" data-fig-height="460">
 
 </div>
 </div>
 </div>
-<div id="column-1" class="section level2" data-width="350">
+<div id="column-1" class="section level2" data-width="450">
 <h2>Column</h2>
 <div id="chart-b" class="section level3">
 <h3>Chart B</h3>
-<div class="knitr-options" data-fig-width="768" data-fig-height="576">
+<div class="knitr-options" data-fig-width="576" data-fig-height="460">
 
 </div>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" data-line-number="1"><span class="kw">data</span>(<span class="st">&quot;rest_inspec&quot;</span>)</a>
-<a class="sourceLine" id="cb1-2" data-line-number="2"></a>
-<a class="sourceLine" id="cb1-3" data-line-number="3">rest_inspec <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb1-4" data-line-number="4"><span class="st">  </span><span class="kw">filter</span>(<span class="dt">.data =</span> ., critical_flag <span class="op">==</span><span class="st"> &quot;Critical&quot;</span>, boro <span class="op">==</span><span class="st"> &quot;BROOKLYN&quot;</span>) <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb1-5" data-line-number="5"><span class="st">  </span><span class="kw">group_by</span>(boro, cuisine_description) <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb1-6" data-line-number="6"><span class="st">  </span><span class="kw">select</span>(<span class="dt">.data =</span> ., boro, critical_flag, cuisine_description) <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb1-7" data-line-number="7"><span class="st">  </span><span class="kw">count</span>(critical_flag) <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb1-8" data-line-number="8"><span class="st">  </span><span class="kw">arrange</span>(<span class="kw">desc</span>(n)) <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb1-9" data-line-number="9"><span class="st">  </span><span class="kw">filter</span>(<span class="dt">.data =</span> ., n <span class="op">&gt;</span><span class="st"> </span><span class="dv">1000</span>) <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb1-10" data-line-number="10"><span class="st">  </span><span class="kw">plot_ly</span>(<span class="dt">x =</span> <span class="op">~</span><span class="kw">reorder</span>(cuisine_description, <span class="op">-</span>n), <span class="dt">y =</span> <span class="op">~</span>n, <span class="dt">type =</span> <span class="st">&quot;bar&quot;</span>)</a></code></pre></div>
-<div id="htmlwidget-be055a74969525a1ba92" style="width:90%;height:576px;" class="plotly html-widget"></div>
-<script type="application/json" data-for="htmlwidget-be055a74969525a1ba92">{"x":{"visdat":{"225d1fae5dec":["function () ","plotlyVisDat"]},"cur_data":"225d1fae5dec","attrs":{"225d1fae5dec":{"x":{},"y":{},"alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"bar"}},"layout":{"margin":{"b":40,"l":60,"t":25,"r":10},"xaxis":{"domain":[0,1],"automargin":true,"title":"reorder(cuisine_description, -n)","type":"category","categoryorder":"array","categoryarray":["American","Chinese","Caribbean","Pizza","Mexican","CafÃ©/Coffee/Tea","Latin (Cuban, Dominican, Puerto Rican, South & Central American)","Bakery","Jewish/Kosher","Japanese","Italian","Spanish","Pizza/Italian","Chicken"]},"yaxis":{"domain":[0,1],"automargin":true,"title":"n"},"hovermode":"closest","showlegend":false},"source":"A","config":{"showSendToCloud":false},"data":[{"x":["American","Chinese","Caribbean","Pizza","Mexican","CafÃ©/Coffee/Tea","Latin (Cuban, Dominican, Puerto Rican, South & Central American)","Bakery","Jewish/Kosher","Japanese","Italian","Spanish","Pizza/Italian","Chicken"],"y":[10320,7489,3649,2536,2513,2374,2085,1988,1694,1666,1594,1425,1382,1059],"type":"bar","marker":{"color":"rgba(31,119,180,1)","line":{"color":"rgba(31,119,180,1)"}},"error_y":{"color":"rgba(31,119,180,1)"},"error_x":{"color":"rgba(31,119,180,1)"},"xaxis":"x","yaxis":"y","frame":null}],"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.2,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-8e9adde59fd6e1cad009" style="width:576px;height:460.8px;" class="plotly html-widget"></div>
+<script type="application/json" data-for="htmlwidget-8e9adde59fd6e1cad009">{"x":{"visdat":{"41335ed9b66":["function () ","plotlyVisDat"]},"cur_data":"41335ed9b66","attrs":{"41335ed9b66":{"x":{},"y":{},"alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"bar"}},"layout":{"margin":{"b":40,"l":60,"t":25,"r":10},"xaxis":{"domain":[0,1],"automargin":true,"title":"reorder(cuisine_description, -n)","type":"category","categoryorder":"array","categoryarray":["American","Chinese","Caribbean","Pizza","Mexican","CafÃ©/Coffee/Tea","Latin (Cuban, Dominican, Puerto Rican, South & Central American)","Bakery","Jewish/Kosher","Japanese","Italian","Spanish","Pizza/Italian","Chicken"]},"yaxis":{"domain":[0,1],"automargin":true,"title":"n"},"hovermode":"closest","showlegend":false},"source":"A","config":{"showSendToCloud":false},"data":[{"x":["American","Chinese","Caribbean","Pizza","Mexican","CafÃ©/Coffee/Tea","Latin (Cuban, Dominican, Puerto Rican, South & Central American)","Bakery","Jewish/Kosher","Japanese","Italian","Spanish","Pizza/Italian","Chicken"],"y":[10320,7489,3649,2536,2513,2374,2085,1988,1694,1666,1594,1425,1382,1059],"type":"bar","marker":{"color":"rgba(31,119,180,1)","line":{"color":"rgba(31,119,180,1)"}},"error_y":{"color":"rgba(31,119,180,1)"},"error_x":{"color":"rgba(31,119,180,1)"},"xaxis":"x","yaxis":"y","frame":null}],"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.2,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
 </div>
 <div id="chart-c" class="section level3">
 <h3>Chart C</h3>
-<div class="knitr-options" data-fig-width="768" data-fig-height="576">
+<div class="knitr-options" data-fig-width="576" data-fig-height="460">
 
 </div>
 </div>
