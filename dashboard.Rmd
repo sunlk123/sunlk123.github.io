@@ -62,5 +62,5 @@ rest_inspec %>%
   select(.data = ., boro, cuisine_description, score) %>%
   group_by(cuisine_description) %>%
   plot_ly(x = ~cuisine_description, y = ~score, type = "box", color = ~cuisine_description) %>%
-  layout(legend = "bottom")
+  layout(legend = list(orientation = 'h'))
 ```
