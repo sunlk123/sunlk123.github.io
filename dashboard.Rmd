@@ -21,7 +21,7 @@ set.seed(1)
 
 rest_inspec_df = 
   rest_inspec %>%
-  filter(.data = ., boro != "MANHATTAN", score != "NA", grade != "NA") %>%
+  filter(.data = ., boro != "Missing", score != "NA", grade != "NA") %>%
   sample_n(5000)
 ```
 
@@ -58,5 +58,5 @@ rest_inspec_df %>%
 
 ```{r}
 rest_inspec_df %>%
-  plot_ly(x = ~critical_flag, y = ~action, type = "scatter", mode = "markers", color = ~score)
+  plot_ly(x = ~boro, y = ~score, type = "box", color = ~grade) %>% layout(boxmode = "group")
 ```
