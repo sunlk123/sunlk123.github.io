@@ -6,4 +6,13 @@ output:
     toc_float: true
 ---
 
+## Academic Experiences
 
+### MPH Candidate at the Mailman School of Public Health, Columbia University
+Expected graduation date: May 2020
+Department: Population and Family Health
+Certificate: Public Health Research Methods 
+
+## Professional Experiences
+
+### Research Assistant, Guttmacher Institute, New York, NY
