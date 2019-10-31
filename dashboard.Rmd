@@ -17,6 +17,13 @@ library(plotly)
 ```
 
 ## Problem 2
+
+Column {.sidebar}
+-----------------------------------------------------------------------
+The following charts use data collected from restaurant inspections conducted by the New York City Department of Health and Mental Hygiene. These inspections are conducted annually to ensure that restaurants are in compliance with policies on food handling, food temperature, personal hygiene of restaurant staff and vermin control. 
+
+Chart A 
+
 Column {data-width=650}
 -----------------------------------------------------------------------
 
@@ -34,7 +41,7 @@ rest_inspec %>%
 
 Column {data-width=450}
 -----------------------------------------------------------------------
-### Chart B
+### Number of critical flags by cuisine type in Brooklyn, New York
 
 ```{r}
 data("rest_inspec")
@@ -47,8 +54,7 @@ rest_inspec %>%
   arrange(desc(n)) %>%
   filter(.data = ., n > 1000) %>%
   plot_ly(x = ~reorder(cuisine_description, -n), y = ~n, type = "bar") %>%
-  layout(title = "Number of critical flags by cuisine type in Brooklyn, New York",
-         xaxis = list(title = "Type of Cuisine",
+  layout(xaxis = list(title = "Type of Cuisine",
          yaxis = list(title = "Number of critical flags")))             
 ```
 
