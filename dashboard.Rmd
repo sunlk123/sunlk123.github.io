@@ -2,8 +2,8 @@
 title: "Dashboard"
 output: 
   flexdashboard::flex_dashboard:
-    orientation: rows
-    horizontal_layout: fill
+    orientation: columns
+    vertical_layout: fill
 ---
 
 ```{r setup, include=FALSE}
@@ -14,13 +14,11 @@ library(p8105.datasets)
 library(plotly)
 ```
 
-## Problem 2
-
 ```{r}
 data(rest_inspect)
 ```
 
-Column {data-height=650}
+Column {data-width=650}
 -----------------------------------------------------------------------
 
 ### Chart A
@@ -38,7 +36,7 @@ rest_inspec %>%
 ```
 
 
-Column {data-height=350}
+Column {data-width=350}
 -----------------------------------------------------------------------
 
 ### Number of critical flags by cuisine type in Brooklyn, New York
