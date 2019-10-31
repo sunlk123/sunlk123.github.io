@@ -6,7 +6,6 @@ output:
     toc_float: true
 ---
 
-
 ## Education
 
 **MPH Candidate at Columbia University Mailman School of Public Health, New York, NY**
