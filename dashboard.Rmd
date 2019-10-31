@@ -14,6 +14,8 @@ library(viridis)
 library(p8105.datasets)
 
 library(plotly)
+
+data(rest_inspec)
 ```
 
 ## Problem 2
@@ -30,22 +32,22 @@ Column {data-width=650}
 ### Chart A
 
 ```{r}
-data("rest_inspec")
-
 rest_inspec %>%
-  filter(.data = ., boro != "MISSING") %>%
+  filter(.data = ., boro != "Missing") %>%
+  mutate(.data = ., 
+         as.factor(grade),
+         fct_reorder(boro, grade)) %>%
   group_by(boro) %>%
   count(grade) %>%
-  plot_ly(y = ~grade, type = "box")
+  filter(.data = ., n != "NA") %>%
+  plot_ly(x = ~reorder(grade, -n), y = ~n, color = ~boro, type = "bar")
 ```
 
-Column {data-width=450}
+Column {data-width=350}
 -----------------------------------------------------------------------
 ### Number of critical flags by cuisine type in Brooklyn, New York
 
 ```{r}
-data("rest_inspec")
-
 rest_inspec %>%
   filter(.data = ., critical_flag == "Critical", boro == "BROOKLYN") %>%
   group_by(boro, cuisine_description) %>%
@@ -61,4 +63,11 @@ rest_inspec %>%
 ### Chart C
 
 ```{r}
+rest_inspec %>%
+  filter(.data = ., boro != "Missing", score != "NA") %>%
+  group_by(cuisine_description) %>%
+  mutate(.data = ., mean_score_cuisine = mean(score)) %>%
+  select(.data = ., boro, cuisine_description, mean_score_cuisine) %>% 
+  distinct() %>%
+  plot_ly(x = ~boro, y = ~mean_score_cuisine, type = "box", color = ~boro)
 ```
