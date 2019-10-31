@@ -43,7 +43,7 @@ rest_inspec %>%
   plot_ly(x = ~reorder(grade, -n), y = ~n, color = ~boro, type = "bar")
 ```
 
-Column {data-width=250}
+Column {data-width=500}
 -----------------------------------------------------------------------
 ### Number of critical flags by cuisine type in Brooklyn, New York
 
