@@ -6,8 +6,8 @@ output:
     toc_float: true
 ---
 
-<img src="images/flower.JPG" style="width:75%">
+<img src="image/flower.JPG" style="width:75%">
 
 My name is Lorraine Kwok and I am a second-year MPH student in the Department of Population and Family Health with a certificate in Public Health Research Methods. This semester, I am taking Data Science to learn more about data cleaning and data visualization. In addition to Data Science, I am taking Analysis of Categorical Data, Applied Linear Regression, Qualitative Data Analysis and Public Health GIS.
 
-You can learn about my academic and professional experience [here](about.html).
+You can learn about my academic and professional experiences [here](about.html).
