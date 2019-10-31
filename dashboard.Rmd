@@ -23,6 +23,13 @@ Column {data-width=650}
 ### Chart A
 
 ```{r}
+data("rest_inspec")
+
+rest_inspec %>%
+  filter(.data = ., boro != "MISSING") %>%
+  group_by(boro) %>%
+  count(grade) %>%
+  plot_ly(y = ~grade, type = "box")
 ```
 
 Column {data-width=450}

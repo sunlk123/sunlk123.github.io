@@ -8,9 +8,9 @@ navbar:
     - text: "Dashboard"
       href: dashboard.html
     - icon: fa-envelope fa-lg
-      href: mailto:<you@youremail.com>
+      href: mailto:<lk2761@cumc.columbia.edu>
     - icon: fa-github fa-lg
-      href: http://github.com/<YOUR_GH_NAME>/
+      href: http://github.com/sunlk123/
 output:
   html_document:
     theme:flatly
