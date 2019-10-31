@@ -2,8 +2,8 @@
 title: "Dashboard"
 output: 
   flexdashboard::flex_dashboard:
-    orientation: columns
-    vertical_layout: fill
+    orientation: rows
+    horizontal_layout: fill
 ---
 
 ```{r setup, include=FALSE}
@@ -20,7 +20,7 @@ library(plotly)
 data(rest_inspect)
 ```
 
-Column {data-width=650}
+Column {data-height=650}
 -----------------------------------------------------------------------
 
 ### Chart A
@@ -38,7 +38,7 @@ rest_inspec %>%
 ```
 
 
-Column {data-width=350}
+Column {data-height=350}
 -----------------------------------------------------------------------
 
 ### Number of critical flags by cuisine type in Brooklyn, New York
