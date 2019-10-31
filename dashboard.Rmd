@@ -1,7 +1,8 @@
 ---
 title: "Dashboard"
 output: 
-  flexdashboard::flex_dashboard
+  flexdashboard::flex_dashboard:
+    orientation: columns
 ---
 
 ```{r setup, include=FALSE}
@@ -21,9 +22,6 @@ The following charts use data collected from restaurant inspections conducted by
 
 This dashboard focuses on restaurants located in Brooklyn with the first chart looking at the distribution of grades aross all types of cuisine. The second chart looks at the number of critical flags by type of cuisine and the third chart looks at the distribution of health inspection scores among sweets-related restaurants. 
 
-Column {data-width=900}
------------------------------------------------------------------------
-
 ### Chart A
 
 ```{r}
@@ -38,8 +36,6 @@ rest_inspec %>%
   plot_ly(x = ~reorder(grade, -n), y = ~n, color = ~boro, type = "bar")
 ```
 
-Column {data-width=750}
------------------------------------------------------------------------
 ### Number of critical flags by cuisine type in Brooklyn, New York
 
 ```{r}
