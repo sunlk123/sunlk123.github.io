@@ -51,8 +51,7 @@ rest_inspec %>%
   filter(.data = ., n > 1000) %>%
   plot_ly(x = ~reorder(cuisine_description, -n), y = ~n, type = "bar") %>%
   layout(xaxis = list(title = "Type of Cuisine", size = 6, tickangle = 45),
-         yaxis = list(title = "Number of critical flags", size = 6), 
-         legend = "bottom")            
+         yaxis = list(title = "Number of critical flags", size = 6))            
 ```
 
 ### Distribution of health inspection scores among sweets-related restaurants in Brooklyn 
@@ -62,5 +61,6 @@ rest_inspec %>%
   filter(.data = ., boro == "BROOKLYN", score != "NA", cuisine_description == "Donuts" | cuisine_description == "Bakery" | cuisine_description == "Ice Cream, Gelato, Yogurt, Ices" | cuisine_description == "Pancakes/Waffles") %>%
   select(.data = ., boro, cuisine_description, score) %>%
   group_by(cuisine_description) %>%
-  plot_ly(x = ~cuisine_description, y = ~score, type = "box", color = ~cuisine_description)
+  plot_ly(x = ~cuisine_description, y = ~score, type = "box", color = ~cuisine_description) %>%
+  layout(legend = "bottom")
 ```
