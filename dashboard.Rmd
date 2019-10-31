@@ -54,9 +54,10 @@ rest_inspec_df %>%
   plot_ly(x = ~boro, y = ~n, type = "box", color = ~grade) 
 ```
 
-### Distribution of health inspection scores among sweets-related restaurants in Brooklyn 
+### Distribution of health inspection scores (A,B,C) among restaurants in New York City
 
 ```{r}
 rest_inspec_df %>%
+  filter(.data = ., grade == "A" | grade == "B" | grade == "C") %>%
   plot_ly(x = ~boro, y = ~score, type = "box", color = ~grade) %>% layout(boxmode = "group")
 ```
