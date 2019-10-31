@@ -19,7 +19,7 @@ Column {.sidebar}
 -----------------------------------------------------------------------
 The following charts use data collected from restaurant inspections conducted by the New York City Department of Health and Mental Hygiene. These inspections are conducted annually to ensure that restaurants are in compliance with policies on food handling, food temperature, personal hygiene of restaurant staff and vermin control. 
 
-Chart A 
+This dashboard focuses on restaurants located in Brooklyn with the first chart looking at the distribution of grades aross all types of cuisine. The second chart looks at the number of critical flags by type of cuisine and the third chart looks at the distribution of health inspection scores among sweets-related restaurants. 
 
 Column {data-width=900}
 -----------------------------------------------------------------------
@@ -55,14 +55,12 @@ rest_inspec %>%
          yaxis = list(title = "Number of critical flags")))             
 ```
 
-### Chart C
+### Distribution of health inspection scores among sweets-related restaurants in Brooklyn 
 
 ```{r}
 rest_inspec %>%
-  filter(.data = ., boro != "Missing", score != "NA") %>%
+  filter(.data = ., boro == "BROOKLYN", score != "NA", cuisine_description == "Donuts" | cuisine_description == "Bakery" | cuisine_description == "Ice Cream, Gelato, Yogurt, Ices" | cuisine_description == "Pancakes/Waffles") %>%
+  select(.data = ., boro, cuisine_description, score) %>%
   group_by(cuisine_description) %>%
-  mutate(.data = ., mean_score_cuisine = mean(score)) %>%
-  select(.data = ., boro, cuisine_description, mean_score_cuisine) %>% 
-  distinct() %>%
-  plot_ly(x = ~boro, y = ~mean_score_cuisine, type = "box", color = ~boro)
+  plot_ly(x = ~cuisine_description, y = ~score, type = "box", color = ~cuisine_description)
 ```
