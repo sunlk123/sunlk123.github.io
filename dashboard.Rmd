@@ -50,8 +50,8 @@ rest_inspec %>%
   arrange(desc(n)) %>%
   filter(.data = ., n > 1000) %>%
   plot_ly(x = ~reorder(cuisine_description, -n), y = ~n, type = "bar") %>%
-  layout(xaxis = list(title = "Type of Cuisine",
-         yaxis = list(title = "Number of critical flags")))             
+  layout(xaxis = list(title = "Type of Cuisine", size = 6),
+         yaxis = list(title = "Number of critical flags"))            
 ```
 
 ### Distribution of health inspection scores among sweets-related restaurants in Brooklyn 
