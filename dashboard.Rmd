@@ -16,6 +16,14 @@ library(plotly)
 
 ```{r}
 data(rest_inspec)
+
+set.seed(1)
+
+rest_inspec_brooklyn = 
+  rest_inspec %>%
+  select(.data = ., boro, cuisine_description, score, grade, violation_code) %>%
+    filter(.data = ., boro == "BROOKLYN", score != "NA", grade != "NA") %>%
+  sample_n(5000)
 ```
 
 Column {data-width=650}
@@ -24,32 +32,26 @@ Column {data-width=650}
 ### Chart A
 
 ```{r}
-rest_inspec %>%
-  filter(.data = ., boro != "Missing") %>%
-  mutate(.data = ., 
-         as.factor(grade),
-         fct_reorder(boro, grade)) %>%
-  group_by(boro) %>%
+rest_inspec_brooklyn %>%
+  mutate(.data = ., as.factor(grade)) %>%
   count(grade) %>%
   filter(.data = ., n != "NA") %>%
-  plot_ly(x = ~reorder(grade, -n), y = ~n, color = ~boro, type = "bar")
+  plot_ly(x = ~reorder(grade, -n), y = ~n, color = ~grade, type = "bar")
 ```
 
 
 Column {data-width=350}
 -----------------------------------------------------------------------
 
-### Number of critical flags by cuisine type in Brooklyn, New York
+### Distribution of violation codes by cuisine type in Brooklyn, New York
 
 ```{r}
-rest_inspec %>%
-  filter(.data = ., critical_flag == "Critical", boro == "BROOKLYN") %>%
-  group_by(boro, cuisine_description) %>%
-  select(.data = ., boro, critical_flag, cuisine_description) %>%
-  count(critical_flag) %>%
+rest_inspec_brooklyn %>%
+  group_by(boro, grade) %>%
+  count(violation_code) %>%
   arrange(desc(n)) %>%
-  filter(.data = ., n > 1000) %>%
-  plot_ly(x = ~reorder(cuisine_description, -n), y = ~n, type = "bar") %>%
+  filter(.data = ., n > 20) %>%
+  plot_ly(x = ~grade, y = ~violation_code, type = "scatter", mode = "markers", color = ~grade) %>%
   layout(xaxis = list(title = "Type of Cuisine", size = 6, tickangle = 45),
          yaxis = list(title = "Number of critical flags", size = 6))            
 ```
@@ -57,10 +59,8 @@ rest_inspec %>%
 ### Distribution of health inspection scores among sweets-related restaurants in Brooklyn 
 
 ```{r}
-rest_inspec %>%
-  filter(.data = ., boro == "BROOKLYN", score != "NA", cuisine_description == "Donuts" | cuisine_description == "Bakery" | cuisine_description == "Ice Cream, Gelato, Yogurt, Ices" | cuisine_description == "Pancakes/Waffles") %>%
-  select(.data = ., boro, cuisine_description, score) %>%
+rest_inspec_brooklyn %>%
+  filter(.data = ., cuisine_description == "Donuts" | cuisine_description == "Bakery" | cuisine_description == "Ice Cream, Gelato, Yogurt, Ices") %>%
   group_by(cuisine_description) %>%
-  plot_ly(x = ~cuisine_description, y = ~score, type = "box", color = ~cuisine_description) %>%
-  layout(legend = list(orientation = 'h'))
+  plot_ly(x = ~cuisine_description, y = ~score, type = "box", color = ~cuisine_description)
 ```
