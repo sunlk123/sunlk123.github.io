@@ -7,9 +7,9 @@ output:
 ---
 
 
-## Academic Experiences
+## Education
 
-_MPH Candidate at the Mailman School of Public Health, Columbia University_
+_MPH Candidate at Columbia University Mailman School of Public Health, New York, NY_
 
 Expected graduation date: May 2020
 
@@ -17,8 +17,37 @@ Department: Population and Family Health
 
 Certificate: Public Health Research Methods 
 
+_Vassar College, Poughkeepsie, NY_
 
+Graduation date: May 2015
+
+Major: Biochemistry
+
+Correlate: Asian Studies 
 
 ## Professional Experiences
 
+_Graduate Teaching Assistant, Mailman School of Public Health, New York, NY_
+
+  * Hold office hours to help students understand key concepts of service-based 
+    quantitative data analysis
+
+  * Assist professor with editing class handouts 
+
+  * Grade students' homework assignments
+
 _Research Assistant, Guttmacher Institute, New York, NY_
+
+  * Conduct literature review on global and national incidence of abortion and 
+    unintended pregnancy, global fecundity and frequency of sexual activity
+
+  * Gather and manage abortion data from official statistics and surveys
+
+  * Field surveys at clinics that provide publicly funded family planning 
+    services to see how the recent changes in policies affect people's access to     care 
+
+_Organic Chemistry Lab Assistant, Vassar College, New York, NY_
+
+  * Assist students in setting up their laboratory equipment
+
+  * Answer questions and explain key concepts to students 
