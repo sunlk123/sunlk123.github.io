@@ -10,18 +10,24 @@ output:
 library(flexdashboard)
 library(tidyverse)
 library(p8105.datasets)
-library(plotly)
 
-data(rest_inspec)
+library(plotly)
 ```
 
 ## Problem 2
+
+```{r}
+data(rest_inspect)
+```
 
 Column {.sidebar}
 -----------------------------------------------------------------------
 The following charts use data collected from restaurant inspections conducted by the New York City Department of Health and Mental Hygiene. These inspections are conducted annually to ensure that restaurants are in compliance with policies on food handling, food temperature, personal hygiene of restaurant staff and vermin control. 
 
 This dashboard focuses on restaurants located in Brooklyn with the first chart looking at the distribution of grades aross all types of cuisine. The second chart looks at the number of critical flags by type of cuisine and the third chart looks at the distribution of health inspection scores among sweets-related restaurants. 
+
+Column {data-width=650}
+-----------------------------------------------------------------------
 
 ### Chart A
 
@@ -36,6 +42,10 @@ rest_inspec %>%
   filter(.data = ., n != "NA") %>%
   plot_ly(x = ~reorder(grade, -n), y = ~n, color = ~boro, type = "bar")
 ```
+
+
+Column {data-width=350}
+-----------------------------------------------------------------------
 
 ### Number of critical flags by cuisine type in Brooklyn, New York
 
