@@ -27,7 +27,6 @@ Column {data-width=650}
 
 Column {data-width=450}
 -----------------------------------------------------------------------
-
 ### Chart B
 
 ```{r}
@@ -40,7 +39,10 @@ rest_inspec %>%
   count(critical_flag) %>%
   arrange(desc(n)) %>%
   filter(.data = ., n > 1000) %>%
-  plot_ly(x = ~reorder(cuisine_description, -n), y = ~n, type = "bar")
+  plot_ly(x = ~reorder(cuisine_description, -n), y = ~n, type = "bar") %>%
+  layout(title = "Number of critical flags by cuisine type in Brooklyn, New York",
+         xaxis = list(title = "Type of Cuisine",
+         yaxis = list(title = "Number of critical flags")))             
 ```
 
 ### Chart C
