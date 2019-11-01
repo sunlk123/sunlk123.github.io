@@ -28,36 +28,34 @@ rest_inspec_df =
 Column {data-width=650}
 -----------------------------------------------------------------------
 
-### Chart A
-
-```{r}
-rest_inspec_df %>%
-  group_by(boro) %>%
-  mutate(.data = ., as.factor(grade)) %>%
-  count(grade) %>%
-  filter(.data = ., n != "NA") %>%
-  plot_ly(x = ~reorder(boro, -n), y = ~n, color = ~grade, type = "bar")
-```
-
-
-Column {data-width=350}
------------------------------------------------------------------------
-
-### Distribution of violation codes by cuisine type in Brooklyn, New York
-
-```{r}
-rest_inspec_df %>%
-  group_by(boro, grade, score) %>%
-  count(violation_code) %>%
-  arrange(desc(n)) %>%
-  ungroup() %>%
-  plot_ly(x = ~boro, y = ~n, type = "box", color = ~grade) 
-```
-
-### Distribution of health inspection scores (A,B,C) among restaurants in New York City
+### Distribution of health inspection scores among restaurants in the five boroughs in New York City
 
 ```{r}
 rest_inspec_df %>%
   filter(.data = ., grade == "A" | grade == "B" | grade == "C") %>%
   plot_ly(x = ~boro, y = ~score, type = "box", color = ~grade) %>% layout(boxmode = "group")
 ```
+
+Column {data-width=350}
+-----------------------------------------------------------------------
+
+### Average score by cuisine type in Brooklyn, New York
+
+```{r}
+rest_inspec_df %>%
+  filter(.data = ., boro == "BROOKLYN") %>%
+  group_by(cuisine_description) %>%
+  mutate(.data = ., avg_score = mean(score)) %>%
+  distinct(avg_score) %>%
+  plot_ly(x = ~reorder(cuisine_description, avg_score), y = ~avg_score, type = "bar")
+```
+
+### 
+```{r}
+rest_inspec_df %>%
+  group_by(boro, grade) %>%
+  filter(.data = ., grade == "A" | grade == "B" | grade == "C") %>%
+  plot_ly(x = ~boro, y = ~score, color = ~grade, type = "violin") %>%
+  layout(violinmode = "group")
+```
+
