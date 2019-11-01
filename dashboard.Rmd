@@ -47,7 +47,7 @@ rest_inspec_df %>%
   plot_ly(x = ~grade, y = ~score, type = "violin", color = ~grade)
 ```
 
-### Distribution of health inspection grades among selected restaurants in Brooklyn, NY
+### Distribution of health inspection grades among select cuisine types in Brooklyn, NY
 
 ```{r}
 rest_inspec_df %>%
