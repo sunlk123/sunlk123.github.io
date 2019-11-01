@@ -8,6 +8,7 @@ output:
 
 ## Education
 
+
 **MPH Candidate at Columbia University Mailman School of Public Health, New York, NY**
 
 Expected graduation date: May 2020
@@ -15,6 +16,7 @@ Expected graduation date: May 2020
 Department: Population and Family Health
 
 Certificate: Public Health Research Methods 
+
 
 **Bachelor of Arts, Vassar College, Poughkeepsie, NY**
 
@@ -24,7 +26,9 @@ Major: Biochemistry
 
 Correlate: Asian Studies 
 
+
 ## Professional Experiences
+
 
 **Graduate Teaching Assistant, Mailman School of Public Health, New York, NY**
 
@@ -39,6 +43,26 @@ _May 2019 - Present_
 
   * Grade students' homework assignments
 
+
+**Research Intern, New York Presbyterian Morgan Stanley Children’s Hospital, New York, NY**	
+
+
+_May 2019 – Aug 2019_
+
+
+  * Recruited adolescent patients, ages 13-24, in the Pediatric Emergency 
+    Department to participate in Dr. Lauren S. Chernick and Dr. Ian D. Aronson’s     “Mobile Augmented Screening Tool to Increase Adolescent Testing and Linkage 
+    to Care” study. 
+    
+  * Created SPSS database to store baseline and follow-up data for respondents       in the Dr. Erica study. 
+    
+  * Compiled list of birth control methods prescribed in the Emergency   
+    Department, using the National Hospital Ambulatory Medical Care Survey  
+    (NHAMCS) dataset, for a data analysis plan. 
+    
+  * Conducted a literature search on adolescent confidentiality in the Emergency     Department.   
+  
+  
 **Research Assistant, Guttmacher Institute, New York, NY**
 
 
@@ -53,6 +77,7 @@ _October 2016 - Present_
   * Field surveys at clinics that provide publicly funded family planning 
     services to see how the recent changes in policies affect people's access to     care 
 
+
 **Organic Chemistry Lab Assistant, Vassar College, New York, NY**
 
 
@@ -62,6 +87,7 @@ _September 2013 - May 2015_
   * Assist students in setting up their laboratory equipment
 
   * Answer questions and explain key concepts to students 
+
 
 ## Publications
 
